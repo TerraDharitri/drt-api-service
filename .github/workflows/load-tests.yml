@@ -7,6 +7,9 @@ on:
 jobs:
   test-base:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./drt-api-service
 
     steps:
     - uses: actions/checkout@v2
@@ -19,7 +22,8 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install
+      run:  npm install --force
+
 
     - name: Initialize the project
       run: npm run init
@@ -46,6 +50,7 @@ jobs:
 
     - name: Wait for API to be ready
       run: |
+        - run: ss -tuln && ps aux | grep node
         until curl --output /dev/null --silent --fail http://localhost:4001/hello; do
           echo 'Waiting for API...'
           sleep 1
@@ -75,12 +80,13 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install --force
+
 
     - name: Initialize the project
       run: npm run init
@@ -140,7 +146,7 @@ jobs:
           path: artifacts
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
 

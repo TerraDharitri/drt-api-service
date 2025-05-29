@@ -85,8 +85,14 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install --force
-
+      run: npm ci --legacy-peer-deps
+      working-directory: ./drt-api-service
+      
+    - name: Debug working directory
+      run: |
+        echo "PWD: $(pwd)"
+        ls -R
+    
 
     - name: Initialize the project
       run: npm run init

@@ -19,7 +19,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm ci --f
+      run: npm install
 
     - name: Initialize the project
       run: npm run init
@@ -80,7 +80,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm ci
+      run: npm install
 
     - name: Initialize the project
       run: npm run init

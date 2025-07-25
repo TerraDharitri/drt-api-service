@@ -55,7 +55,7 @@ export class CacheWarmerService {
     private readonly gatewayService: GatewayService,
     private readonly schedulerRegistry: SchedulerRegistry,
     private readonly assetsService: AssetsService,
-    private readonly moaPairsService: MoaPairService,
+    private readonly drtPairsService: MoaPairService,
     private readonly moaSettingsService: MoaSettingsService,
     private readonly moaFarmsService: MoaFarmService,
     private readonly delegationLegacyService: DelegationLegacyService,
@@ -259,7 +259,7 @@ export class CacheWarmerService {
     const providers = await this.providerService.getAllProviders();
     const identities = await this.identitiesService.getAllIdentities();
 
-    const pairs = await this.moaPairsService.getAllMoaPairs();
+    const pairs = await this.drtPairsService.getAllMoaPairs();
     const farms = await this.moaFarmsService.getAllMoaFarms();
     const settings = await this.moaSettingsService.getSettings();
     const stakingProxies = await this.moaFarmsService.getAllStakingProxies();

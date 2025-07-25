@@ -1,7 +1,7 @@
 import { forwardRef, Module } from "@nestjs/common";
 import { AssetsModule } from "src/common/assets/assets.module";
 import { DataApiModule } from "src/common/data-api/data-api.module";
-import { PluginModule } from 'src/plugins/plugin.module';
+import { PluginModule } from "src/plugins/plugin.module";
 import { BlockModule } from "../blocks/block.module";
 import { NetworkModule } from "../network/network.module";
 import { PoolModule } from "../pool/pool.module";

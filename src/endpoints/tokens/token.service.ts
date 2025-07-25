@@ -66,7 +66,7 @@ export class TokenService {
     private readonly moaTokenService: MoaTokenService,
     private readonly collectionService: CollectionService,
     private readonly dataApiService: DataApiService,
-    private readonly moaPairService: MoaPairService,
+    private readonly drtPairService: MoaPairService,
     private readonly apiService: ApiService,
   ) { }
 
@@ -183,9 +183,9 @@ export class TokenService {
       tokens = this.sortTokens(tokens, filter.sort, filter.order ?? SortOrder.desc);
     }
 
-    const moaPairTypes = filter.moaPairType ?? [];
-    if (moaPairTypes.length > 0) {
-      tokens = tokens.filter(token => moaPairTypes.includes(token.moaPairType));
+    const drtPairTypes = filter.drtPairType ?? [];
+    if (drtPairTypes.length > 0) {
+      tokens = tokens.filter(token => drtPairTypes.includes(token.drtPairType));
     }
 
     if (filter.priceSource) {
@@ -733,7 +733,7 @@ export class TokenService {
 
     const tokens = await this.getAllTokens();
     for (const token of tokens) {
-      if (token.price && token.marketCap && !token.isLowLiquidity) {
+      if (token.price && token.marketCap && !token.isLowLiquidity && token.assets?.priceSource?.type !== TokenAssetsPriceSourceType.customUrl) {
         totalMarketCap += token.marketCap;
       }
     }
@@ -837,7 +837,8 @@ export class TokenService {
 
     tokens = tokens.sortedDescending(
       token => token.assets ? 1 : 0,
-      token => token.isLowLiquidity ? 0 : (token.marketCap ?? 0),
+      token => token.marketCap ? 1 : 0,
+      token => token.isLowLiquidity || token.assets?.priceSource?.type === TokenAssetsPriceSourceType.customUrl ? 0 : (token.marketCap ?? 0),
       token => token.transactions ?? 0,
     );
 
@@ -907,7 +908,7 @@ export class TokenService {
       for (const token of tokens) {
         const moaTokenType = moaTokensDictionary[token.identifier];
         if (moaTokenType) {
-          token.moaPairType = moaTokenType.type;
+          token.drtPairType = moaTokenType.type;
         }
       }
     } catch (error) {
@@ -1017,7 +1018,7 @@ export class TokenService {
 
   private async applyMoaLiquidity(tokens: TokenDetailed[]): Promise<void> {
     try {
-      const allPairs = await this.moaPairService.getAllMoaPairs();
+      const allPairs = await this.drtPairService.getAllMoaPairs();
 
       for (const token of tokens) {
         const pairs = allPairs.filter(x => x.baseId === token.identifier || x.quoteId === token.identifier);
@@ -1072,7 +1073,7 @@ export class TokenService {
     }
 
     try {
-      const pairs = await this.moaPairService.getAllMoaPairs();
+      const pairs = await this.drtPairService.getAllMoaPairs();
       const filteredPairs = pairs.filter(x => x.state === MoaPairState.active);
 
       if (!filteredPairs.length) {

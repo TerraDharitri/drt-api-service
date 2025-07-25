@@ -72,7 +72,7 @@ export class DataApiService {
     }
 
     try {
-      const [cexTokensRaw, DharitriXTokensRaw, hatomTokensRaw, xoxnoTokensRaw] = await Promise.all([
+      const [cexTokensRaw, xExchangeTokensRaw, hatomTokensRaw, xoxnoTokensRaw] = await Promise.all([
         this.apiService.get(`${this.apiConfigService.getDataApiServiceUrl()}/v1/tokens/cex?fields=identifier`),
         this.apiService.get(`${this.apiConfigService.getDataApiServiceUrl()}/v1/tokens/dharitrix?fields=identifier`),
         this.apiService.get(`${this.apiConfigService.getDataApiServiceUrl()}/v1/tokens/hatom?fields=identifier`),
@@ -80,10 +80,10 @@ export class DataApiService {
       ]);
 
       const cexTokens: DataApiToken[] = cexTokensRaw.data.map((token: any) => new DataApiToken({ identifier: token.identifier, market: 'cex' }));
-      const DharitriXTokens: DataApiToken[] = DharitriXTokensRaw.data.map((token: any) => new DataApiToken({ identifier: token.identifier, market: 'dharitrix' }));
+      const xExchangeTokens: DataApiToken[] = xExchangeTokensRaw.data.map((token: any) => new DataApiToken({ identifier: token.identifier, market: 'dharitrix' }));
       const hatomTokens: DataApiToken[] = hatomTokensRaw.data.map((token: any) => new DataApiToken({ identifier: token.identifier, market: 'hatom' }));
       const xoxnoTokens: DataApiToken[] = xoxnoTokensRaw.data.map((token: any) => new DataApiToken({ identifier: token.identifier, market: 'xoxno' }));
-      const tokens = [...cexTokens, ...DharitriXTokens, ...hatomTokens, ...xoxnoTokens].toRecord<DataApiToken>(x => x.identifier);
+      const tokens = [...cexTokens, ...xExchangeTokens, ...hatomTokens, ...xoxnoTokens].toRecord<DataApiToken>(x => x.identifier);
       return tokens;
     } catch (error) {
       this.logger.error(`An unexpected error occurred while fetching tokens from Data API.`);

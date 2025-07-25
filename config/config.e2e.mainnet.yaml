@@ -46,7 +46,7 @@ features:
     serviceUrl: 'https://nfts-graph.dharitri.org/graphql'
   exchange:
     enabled: false
-    serviceUrl: 'https://graph.dharitrix.org/graphql'
+    serviceUrl: 'https://graph.dharitrix.com/graphql'
   dataApi:
     enabled: false
     serviceUrl: 'https://data-api.dharitri.org'
@@ -80,6 +80,11 @@ features:
   deepHistory:
     enabled: false
     url: ''
+  elasticCircuitBreaker:
+    enabled: false
+    durationThresholdMs: 5000
+    failureCountThreshold: 5
+    resetTimeoutMs: 30000
   statusChecker:
     enabled: false
     thresholds:
@@ -133,7 +138,6 @@ urls:
   providers: 'https://delegation-api.dharitri.org/providers'
   delegation: 'https://delegation-api.dharitri.org'
   media: 'https://media.dharitri.org'
-  nftThumbnails: 'https://media.dharitri.org/nfts/thumbnail'
   tmp: '/tmp'
   ipfs: 'https://ipfs.io/ipfs'
   socket: 'socket-api-fra.dharitri.org'

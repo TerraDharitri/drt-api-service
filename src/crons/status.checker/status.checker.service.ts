@@ -38,7 +38,7 @@ export class StatusCheckerService {
     private readonly nodeService: NodeService,
     private readonly providerService: ProviderService,
     private readonly shardService: ShardService,
-    private readonly moaPairService: MoaPairService,
+    private readonly drtPairService: MoaPairService,
     private readonly moaFarmService: MoaFarmService,
     private readonly moaTokenService: MoaTokenService,
     private readonly moaEconomicService: MoaEconomicsService,
@@ -161,7 +161,7 @@ export class StatusCheckerService {
   @Cron(CronExpression.EVERY_MINUTE)
   async handleMoaPairsCount() {
     await Locker.lock('Status Checker: Moa Pairs Count', async () => {
-      const count = await this.moaPairService.getMoaPairsCount();
+      const count = await this.drtPairService.getMoaPairsCount();
       MetricsService.setClusterComparisonValue('total_moa_pairs', count);
     }, true);
   }

@@ -28,7 +28,7 @@ export class TokenFilter {
 
   order?: SortOrder;
 
-  moaPairType?: MoaPairType[];
+  drtPairType?: MoaPairType[];
 
   priceSource?: TokenAssetsPriceSourceType;
 }

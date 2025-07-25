@@ -1,6 +1,6 @@
 import { forwardRef, Module } from "@nestjs/common";
 import { AssetsModule } from "src/common/assets/assets.module";
-import { PluginModule } from 'src/plugins/plugin.module';
+import { PluginModule } from "src/plugins/plugin.module";
 import { NftMediaModule } from "src/queue.worker/nft.worker/queue/job-services/media/nft.media.module";
 import { NftMetadataModule } from "src/queue.worker/nft.worker/queue/job-services/metadata/nft.metadata.module";
 import { CollectionModule } from "../collections/collection.module";

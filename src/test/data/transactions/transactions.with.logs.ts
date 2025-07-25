@@ -12,7 +12,7 @@ const transactionsWithLogs: TransactionLog[] =
       iconPng: "",
       iconSvg: "",
       proof: "",
-      name: "Durian Exchange: WREWA/USDC Liquidity Pool",
+      name: "Maiar Exchange: WREWA/USDC Liquidity Pool",
       tags: [
         "moa",
         "liquiditypool",

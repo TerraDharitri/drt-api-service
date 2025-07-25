@@ -6,7 +6,7 @@ const BASE_URL = 'http://localhost:3001';
 
 const accountsApiCallTrend = new Trend('accounts_http_req_duration', true);
 const blocksApiCallTrend = new Trend('blocks_http_req_duration', true);
-const moaPairsApiCallTrend = new Trend('moa_pairs_http_req_duration', true);
+const drtPairsApiCallTrend = new Trend('moa_pairs_http_req_duration', true);
 const moaTokensApiCallTrend = new Trend('moa_tokens_http_req_duration', true);
 const moaFarmsApiCallTrend = new Trend('moa_farms_http_req_duration', true);
 const nodesApiCallTrend = new Trend('nodes_http_req_duration', true);
@@ -30,7 +30,7 @@ export const options = {
     scenarios: {
         accounts: getScenarioDict('accounts'),
         blocks: getScenarioDict('blocks'),
-        moaPairs: getScenarioDict('moaPairs'),
+        drtPairs: getScenarioDict('drtPairs'),
         moaTokens: getScenarioDict('moaTokens'),
         moaFarms: getScenarioDict('moaFarms'),
         nodes: getScenarioDict('nodes'),
@@ -52,9 +52,9 @@ export function blocks() {
     blocksApiCallTrend.add(response.timings.duration);
 }
 
-export function moaPairs() {
+export function drtPairs() {
     const response = http.get(`${BASE_URL}/moa/pairs`);
-    moaPairsApiCallTrend.add(response.timings.duration);
+    drtPairsApiCallTrend.add(response.timings.duration);
 }
 
 export function moaTokens() {

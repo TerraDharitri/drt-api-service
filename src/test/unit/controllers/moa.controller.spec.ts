@@ -19,7 +19,7 @@ describe('MoaController', () => {
 
   const moaSettingsServiceMocks = mockMoaSettingsService();
   const moaEconomicsServiceMocks = mockMoaEconomicsService();
-  const moaPairServiceMocks = mockMoaPairService();
+  const drtPairServiceMocks = mockMoaPairService();
   const moaTokensServiceMocks = mockMoaTokensService();
   const moaFarmsServiceMocks = mockMoaFarmsService();
 
@@ -30,7 +30,7 @@ describe('MoaController', () => {
       imports: [PublicAppModule],
     }).overrideProvider(MoaSettingsService).useValue(moaSettingsServiceMocks)
       .overrideProvider(MoaEconomicsService).useValue(moaEconomicsServiceMocks)
-      .overrideProvider(MoaPairService).useValue(moaPairServiceMocks)
+      .overrideProvider(MoaPairService).useValue(drtPairServiceMocks)
       .overrideProvider(MoaTokenService).useValue(moaTokensServiceMocks)
       .overrideProvider(MoaFarmService).useValue(moaFarmsServiceMocks)
       .compile();
@@ -63,57 +63,57 @@ describe('MoaController', () => {
 
   describe('GET /moa/pairs', () => {
     it('should return a list of moa pairs', async () => {
-      moaPairServiceMocks.getMoaPairs.mockReturnValue([]);
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       await request(app.getHttpServer())
         .get(`${path}/pairs`)
         .expect(200);
 
-      expect(moaPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
         0, 25, new MoaPairsFilter({ exchange: undefined, includeFarms: false })
       );
     });
 
     it('should return a list of moa pairs with size equal with 5', async () => {
-      moaPairServiceMocks.getMoaPairs.mockReturnValue([]);
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       const queryPagination = new QueryPagination({ from: 0, size: 5 });
 
       await request(app.getHttpServer())
         .get(`${path}/pairs?size=${queryPagination.size}`)
         .expect(200);
 
-      expect(moaPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
         0, 5, new MoaPairsFilter({ exchange: undefined, includeFarms: false })
       );
     });
 
     it('should return a list of moa pairs from exchange source', async () => {
-      moaPairServiceMocks.getMoaPairs.mockReturnValue([]);
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       const queryPagination = new QueryPagination({ from: 0, size: 5 });
 
       await request(app.getHttpServer())
         .get(`${path}/pairs?size=${queryPagination.size}&exchange=${MoaPairExchange.dharitrix}`)
         .expect(200);
 
-      expect(moaPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
         0, 5, new MoaPairsFilter({ exchange: MoaPairExchange.dharitrix, includeFarms: false })
       );
     });
 
     it('should return a list of moa pairs from unknown source', async () => {
-      moaPairServiceMocks.getMoaPairs.mockReturnValue([]);
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       const queryPagination = new QueryPagination({ from: 0, size: 5 });
 
       await request(app.getHttpServer())
         .get(`${path}/pairs?size=${queryPagination.size}&exchange=${MoaPairExchange.unknown}`)
         .expect(200);
 
-      expect(moaPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
         0, 5, new MoaPairsFilter({ exchange: MoaPairExchange.unknown, includeFarms: false })
       );
     });
 
     it('should return total moa pairs count', async () => {
-      moaPairServiceMocks.getMoaPairsCount.mockReturnValue(10);
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(10);
       await request(app.getHttpServer())
         .get(`${path}/pairs/count`)
         .expect(200)
@@ -121,13 +121,13 @@ describe('MoaController', () => {
           expect(+response.text).toStrictEqual(10);
         });
 
-      expect(moaPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
         new MoaPairsFilter({ exchange: undefined, includeFarms: false })
       );
     });
 
     it('should return total moa pairs count from exchange', async () => {
-      moaPairServiceMocks.getMoaPairsCount.mockReturnValue(5);
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(5);
       await request(app.getHttpServer())
         .get(`${path}/pairs/count?exchange=${MoaPairExchange.dharitrix}`)
         .expect(200)
@@ -135,13 +135,13 @@ describe('MoaController', () => {
           expect(+response.text).toStrictEqual(5);
         });
 
-      expect(moaPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
         new MoaPairsFilter({ exchange: MoaPairExchange.dharitrix, includeFarms: false })
       );
     });
 
     it('should return total moa pairs count from unknown', async () => {
-      moaPairServiceMocks.getMoaPairsCount.mockReturnValue(5);
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(5);
       await request(app.getHttpServer())
         .get(`${path}/pairs/count?exchange=${MoaPairExchange.unknown}`)
         .expect(200)
@@ -149,13 +149,13 @@ describe('MoaController', () => {
           expect(+response.text).toStrictEqual(5);
         });
 
-      expect(moaPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
         new MoaPairsFilter({ exchange: MoaPairExchange.unknown, includeFarms: false })
       );
     });
 
     it('should return moa pair based on basId and quoteId', async () => {
-      moaPairServiceMocks.getMoaPair.mockReturnValue({});
+      drtPairServiceMocks.getMoaPair.mockReturnValue({});
       const baseId = 'MOA-455c57';
       const quoteId = 'WREWA-bd4d79';
 
@@ -163,22 +163,22 @@ describe('MoaController', () => {
         .get(`${path}/pairs/${baseId}/${quoteId}`)
         .expect(200);
 
-      expect(moaPairServiceMocks.getMoaPair).toHaveBeenCalledWith(baseId, quoteId, false);
+      expect(drtPairServiceMocks.getMoaPair).toHaveBeenCalledWith(baseId, quoteId, false);
     });
 
     it('should return moa pairs with farms information', async () => {
-      moaPairServiceMocks.getMoaPairs.mockReturnValue([]);
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       await request(app.getHttpServer())
         .get(`${path}/pairs?includeFarms=true`)
         .expect(200);
 
-      expect(moaPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
         0, 25, new MoaPairsFilter({ exchange: undefined, includeFarms: true })
       );
     });
 
     it('should return moa pair with farms information', async () => {
-      moaPairServiceMocks.getMoaPair.mockReturnValue({});
+      drtPairServiceMocks.getMoaPair.mockReturnValue({});
       const baseId = 'MOA-455c57';
       const quoteId = 'WREWA-bd4d79';
 
@@ -186,11 +186,11 @@ describe('MoaController', () => {
         .get(`${path}/pairs/${baseId}/${quoteId}?includeFarms=true`)
         .expect(200);
 
-      expect(moaPairServiceMocks.getMoaPair).toHaveBeenCalledWith(baseId, quoteId, true);
+      expect(drtPairServiceMocks.getMoaPair).toHaveBeenCalledWith(baseId, quoteId, true);
     });
 
     it('should return total moa pairs count with farms information', async () => {
-      moaPairServiceMocks.getMoaPairsCount.mockReturnValue(10);
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(10);
       await request(app.getHttpServer())
         .get(`${path}/pairs/count?includeFarms=true`)
         .expect(200)
@@ -198,7 +198,7 @@ describe('MoaController', () => {
           expect(+response.text).toStrictEqual(10);
         });
 
-      expect(moaPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
         new MoaPairsFilter({ exchange: undefined, includeFarms: true })
       );
     });

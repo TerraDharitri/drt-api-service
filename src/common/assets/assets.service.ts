@@ -131,7 +131,7 @@ export class AssetsService {
     if (pairs) {
       for (const pair of pairs) {
         allAssets[pair.address] = this.createAccountAsset(
-          `DharitriX: ${pair.baseSymbol}/${pair.quoteSymbol} Liquidity Pool`,
+          `xExchange: ${pair.baseSymbol}/${pair.quoteSymbol} Liquidity Pool`,
           ['dharitrix', 'liquiditypool']
         );
       }
@@ -140,7 +140,7 @@ export class AssetsService {
     if (farms) {
       for (const farm of farms) {
         allAssets[farm.address] = this.createAccountAsset(
-          `DharitriX: ${farm.name} Farm`,
+          `xExchange: ${farm.name} Farm`,
           ['dharitrix', 'farm']
         );
       }
@@ -155,12 +155,12 @@ export class AssetsService {
       }
 
       allAssets[moaSettings.lockedAssetContract] = this.createAccountAsset(
-        `DharitriX: Locked asset Contract`,
+        `xExchange: Locked asset Contract`,
         ['dharitrix', 'lockedasset']
       );
 
       allAssets[moaSettings.distributionContract] = this.createAccountAsset(
-        `DharitriX: Distribution Contract`,
+        `xExchange: Distribution Contract`,
         ['dharitrix', 'lockedasset']
       );
     }
@@ -168,7 +168,7 @@ export class AssetsService {
     if (stakingProxies) {
       for (const stakingProxy of stakingProxies) {
         allAssets[stakingProxy.address] = this.createAccountAsset(
-          `DharitriX: ${stakingProxy.dualYieldTokenName} Contract`,
+          `xExchange: ${stakingProxy.dualYieldTokenName} Contract`,
           ['dharitrix', 'metastaking']
         );
       }
@@ -217,8 +217,8 @@ export class AssetsService {
     return new AccountAssets({
       name: name,
       tags: tags,
-      iconSvg: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitrix.svg',
-      iconPng: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitrix.png',
+      iconSvg: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitrix.svg',
+      iconPng: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitrix.png',
     });
   }
 }

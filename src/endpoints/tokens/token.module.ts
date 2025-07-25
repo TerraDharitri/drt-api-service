@@ -7,7 +7,7 @@ import { TokenTransferService } from "./token.transfer.service";
 import { AssetsModule } from "src/common/assets/assets.module";
 import { MoaModule } from "../moa/moa.module";
 import { CollectionModule } from "../collections/collection.module";
-import { PluginModule } from 'src/plugins/plugin.module';
+import { PluginModule } from "src/plugins/plugin.module";
 import { TransferModule } from "../transfers/transfer.module";
 
 @Module({

@@ -255,7 +255,7 @@ export class TransactionService {
     const accountAssets = await this.assetsService.getAllAccountAssets();
 
     let usernameAssets: Record<string, AccountAssets> = {};
-    if (options.withUsernameAssets && this.apiConfigService.getDurianIdUrl()) {
+    if (options.withUsernameAssets && this.apiConfigService.getMaiarIdUrl()) {
       const addresses = this.getDistinctUserAddressesFromTransactions(transactions);
 
       usernameAssets = await this.getUsernameAssetsForAddresses(addresses);

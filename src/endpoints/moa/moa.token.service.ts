@@ -21,7 +21,7 @@ export class MoaTokenService {
   constructor(
     private readonly cachingService: CacheService,
     private readonly apiConfigService: ApiConfigService,
-    private readonly moaPairService: MoaPairService,
+    private readonly drtPairService: MoaPairService,
     @Inject(forwardRef(() => MoaFarmService))
     private readonly moaFarmService: MoaFarmService,
     private readonly moaSettingsService: MoaSettingsService,
@@ -80,7 +80,7 @@ export class MoaTokenService {
         };
       }
 
-      const pairs = await this.moaPairService.getAllMoaPairs();
+      const pairs = await this.drtPairService.getAllMoaPairs();
       for (const pair of pairs) {
         result[pair.id] = {
           price: pair.price,
@@ -170,7 +170,7 @@ export class MoaTokenService {
   }
 
   private async getAllMoaTokensRaw(): Promise<MoaToken[]> {
-    const pairs = await this.moaPairService.getAllMoaPairs();
+    const pairs = await this.drtPairService.getAllMoaPairs();
 
     const moaTokens: MoaToken[] = [];
     for (const pair of pairs) {

@@ -114,7 +114,7 @@ export class Token {
   timestamp: number | undefined = undefined;
 
   @ApiProperty({ enum: MoaPairType })
-  moaPairType: MoaPairType = MoaPairType.experimental;
+  drtPairType: MoaPairType = MoaPairType.experimental;
 
   @ApiProperty({ type: Number, nullable: true, required: false })
   totalLiquidity: number | undefined = undefined;

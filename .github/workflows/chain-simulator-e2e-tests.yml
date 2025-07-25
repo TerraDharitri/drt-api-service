@@ -45,7 +45,7 @@ jobs:
           sleep 20
           docker ps
 
-      - run: npm ci --f
+      - run: npm ci
       - run: npm run init
 
       - name: Start API

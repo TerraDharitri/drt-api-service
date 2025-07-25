@@ -8,8 +8,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "wREWA is an DCDT token that has the same value as REWA, the native coin of the  blockchain.",
+      "website": "https://dharitrix.com",
+      "description": "wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.svg",
@@ -39,8 +39,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "MOA is the utility token of the DharitriX.",
+      "website": "https://dharitrix.com",
+      "description": "MOA is the utility token of the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/MOA-455c57/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/MOA-455c57/logo.svg",
@@ -212,8 +212,8 @@
     "decimals": 6,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "USDC stablecoin originating on Ethereum, bridged as an DCDT token on . 1 USDC = 1 WrappedUSDC",
+      "website": "https://dharitrix.com",
+      "description": "USDC stablecoin originating on Ethereum, bridged as an DCDT token on DharitrI. 1 USDC = 1 WrappedUSDC",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/USDC-c76f1f/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/USDC-c76f1f/logo.svg",
@@ -415,7 +415,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://ashswap.io",
-      "description": "AshSwap is the first stable-swap DEX built on the  blockchain that allows users to trade stable assets with high volume and small slippage.",
+      "description": "AshSwap is the first stable-swap DEX built on the DharitrI blockchain that allows users to trade stable assets with high volume and small slippage.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/ASH-a642d1/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/ASH-a642d1/logo.svg",
@@ -652,7 +652,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://aerovek.com",
-      "description": "Aerovek is a social economic platform that aims to elevate the aviation industry using web3 technologies built on the  Blockchain",
+      "description": "Aerovek is a social economic platform that aims to elevate the aviation industry using web3 technologies built on the DharitrI Blockchain",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/AERO-458bbf/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/AERO-458bbf/logo.svg",
@@ -729,7 +729,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://www.launchpad.gold",
-      "description": "The LAUNCH token is at the core of operations for Launchpad Gold, the development initiator for projects on .",
+      "description": "The LAUNCH token is at the core of operations for Launchpad Gold, the development initiator for projects on DharitrI.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/LAUNCH-3e2258/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/LAUNCH-3e2258/logo.svg",
@@ -763,7 +763,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://www.landboard.io",
-      "description": "The LAND token is the utility token of Landboard, the first metaverse application to be built on the  Network.",
+      "description": "The LAND token is the utility token of Landboard, the first metaverse application to be built on the DharitrI Network.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/LAND-40f26f/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/LAND-40f26f/logo.svg",
@@ -957,14 +957,14 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://www.numbathodlers.com/",
+      "website": "https://www.dharitri.org/",
       "description": "HODL, for the right mindset.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/HODL-d7f4b5/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/HODL-d7f4b5/logo.svg",
       "social": {
-        "email": "contact@numbathodlers.com",
-        "twitter": "https://twitter.com/numbathodlers"
+        "email": "dharitri.org",
+        "twitter": "https://twitter.com/dharitri"
       }
     },
     "transactions": 43448,
@@ -992,7 +992,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://artcpaclub.com/",
-      "description": "$CPA is the fuel to power ArtCPAclub ecosystem, built on the  Blockchain",
+      "description": "$CPA is the fuel to power ArtCPAclub ecosystem, built on the DharitrI Blockchain",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/CPA-97530a/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/CPA-97530a/logo.svg",
@@ -1029,7 +1029,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://www.undead.gold",
-      "description": "The first ever  blockchain Treasure Hunt",
+      "description": "The first ever DharitrI blockchain Treasure Hunt",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/DEAD-4c133a/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/DEAD-4c133a/logo.svg",
@@ -1062,8 +1062,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "This token tracks your LKMOA stake in the MOA farm on the DharitriX.",
+      "website": "https://dharitrix.com",
+      "description": "This token tracks your LKMOA stake in the MOA farm on the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/LKFARM-9d1ea8/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/LKFARM-9d1ea8/logo.svg"

@@ -60,8 +60,8 @@ export class MoaPairService {
   }
 
   async getMoaPairsCount(filter?: MoaPairsFilter): Promise<number> {
-    const moaPairs = await this.getAllMoaPairs(filter?.includeFarms ?? false);
-    const filteredPairs = this.applyFilters(moaPairs, filter);
+    const drtPairs = await this.getAllMoaPairs(filter?.includeFarms ?? false);
+    const filteredPairs = this.applyFilters(drtPairs, filter);
 
     return filteredPairs.length;
   }
@@ -215,12 +215,12 @@ export class MoaPairService {
     }
   }
 
-  private applyFilters(moaPairs: MoaPair[], filter?: MoaPairsFilter): MoaPair[] {
+  private applyFilters(drtPairs: MoaPair[], filter?: MoaPairsFilter): MoaPair[] {
     if (!filter) {
-      return moaPairs;
+      return drtPairs;
     }
 
-    let filteredPairs = moaPairs;
+    let filteredPairs = drtPairs;
 
     if (filter.exchange) {
       filteredPairs = filteredPairs.filter(pair => pair.exchange === filter.exchange);

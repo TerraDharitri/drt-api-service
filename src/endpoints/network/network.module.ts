@@ -1,5 +1,5 @@
 import { forwardRef, Module } from "@nestjs/common";
-import { PluginModule } from 'src/plugins/plugin.module';
+import { PluginModule } from "src/plugins/plugin.module";
 import { AccountModule } from "../accounts/account.module";
 import { BlockModule } from "../blocks/block.module";
 import { SmartContractResultModule } from "../sc-results/scresult.module";

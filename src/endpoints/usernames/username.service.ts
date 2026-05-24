@@ -21,7 +21,7 @@ export class UsernameService {
   async getUsernameForAddressRaw(address: string): Promise<string | null> {
     try {
       // eslint-disable-next-line require-await
-      const result = await this.apiService.get(`${this.apiConfigService.getDurianIdUrl()}/users/api/v1/users/${address}`, undefined, async error => error?.response?.status === HttpStatus.FORBIDDEN);
+      const result = await this.apiService.get(`${this.apiConfigService.getMaiarIdUrl()}/users/api/v1/users/${address}`, undefined, async error => error?.response?.status === HttpStatus.FORBIDDEN);
 
       const username = result?.data?.herotag;
 

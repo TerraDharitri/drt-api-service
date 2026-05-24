@@ -45,7 +45,7 @@ features:
     serviceUrl: 'https://testnet-nfts-graph.dharitri.org/graphql'
   exchange:
     enabled: false
-    serviceUrl: 'https://testnet-graph.dharitrix.org/graphql'
+    serviceUrl: 'https://testnet-graph.dharitrix.com/graphql'
   dataApi:
     enabled: false
     serviceUrl: 'https://testnet-data-api.dharitri.org'
@@ -79,6 +79,11 @@ features:
   deepHistory:
     enabled: false
     url: ''
+  elasticCircuitBreaker:
+    enabled: false
+    durationThresholdMs: 5000
+    failureCountThreshold: 5
+    resetTimeoutMs: 30000
   statusChecker:
     enabled: false
     thresholds:
@@ -111,10 +116,6 @@ features:
   assetsFetch:
     enabled: true
     assetesUrl: 'https://tools.dharitri.org/assets-cdn'
-  mediaRedirect:
-    enabled: false
-    storageUrls:
-      - 'https://s3.amazonaws.com/testnet-media.dharitri.org'
 image:
   width: 600
   height: 600
@@ -136,7 +137,6 @@ urls:
   providers: 'https://testnet-delegation-api.dharitri.org/providers'
   delegation: 'https://testnet-delegation-api.dharitri.org'
   media: 'https://testnet-media.dharitri.org'
-  nftThumbnails: 'https://testnet-media.dharitri.org/nfts/thumbnail'
   tmp: '/tmp'
   ipfs: 'https://ipfs.io/ipfs'
   socket: 'testnet-socket-api.dharitri.org'

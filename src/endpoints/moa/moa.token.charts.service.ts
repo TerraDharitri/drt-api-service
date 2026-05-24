@@ -42,15 +42,15 @@ export class MoaTokenChartsService {
     }
   }
 
-  async getTokenPricesDayResolution(tokenIdentifier: string, after: string): Promise<MoaTokenChart[] | undefined> {
+  async getTokenPricesDayResolution(tokenIdentifier: string): Promise<MoaTokenChart[] | undefined> {
     return await this.cachingService.getOrSet(
-      CacheInfo.TokenDailyChart(tokenIdentifier, after).key,
-      async () => await this.getTokenPricesDayResolutionRaw(tokenIdentifier, after),
-      CacheInfo.TokenDailyChart(tokenIdentifier, after).ttl,
+      CacheInfo.TokenDailyChart(tokenIdentifier).key,
+      async () => await this.getTokenPricesDayResolutionRaw(tokenIdentifier),
+      CacheInfo.TokenDailyChart(tokenIdentifier).ttl,
     );
   }
 
-  async getTokenPricesDayResolutionRaw(tokenIdentifier: string, after: string): Promise<MoaTokenChart[] | undefined> {
+  async getTokenPricesDayResolutionRaw(tokenIdentifier: string): Promise<MoaTokenChart[] | undefined> {
     const isMoaToken = await this.isMoaToken(tokenIdentifier);
     if (!isMoaToken) {
       return undefined;
@@ -61,7 +61,6 @@ export class MoaTokenChartsService {
         latestCompleteValues(
           series: "${tokenIdentifier}",
           metric: "priceUSD",
-          start: "${after}"
         ) {
           timestamp
           value

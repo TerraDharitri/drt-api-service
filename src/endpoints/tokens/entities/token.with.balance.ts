@@ -19,5 +19,5 @@ export class TokenWithBalance extends Token {
   attributes: string | undefined = undefined;
 
   @ApiProperty({ enum: MoaPairType })
-  moaPairType: MoaPairType = MoaPairType.experimental;
+  drtPairType: MoaPairType = MoaPairType.experimental;
 }

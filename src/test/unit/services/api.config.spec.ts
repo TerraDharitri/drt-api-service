@@ -114,7 +114,7 @@ describe('API Config', () => {
     });
   });
 
-  describe("getDurianIdUrl", () => {
+  describe("getMaiarIdUrl", () => {
     it("should return durianId url", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
@@ -1125,25 +1125,6 @@ describe('API Config', () => {
     });
   });
 
-  describe("getNftThumbnailsUrl", () => {
-    it("should return nft thumbnails url", () => {
-      jest
-        .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'https://media.dharitri.org/nfts/thumbnail'));
-
-      const results = apiConfigService.getNftThumbnailsUrl();
-      expect(results).toEqual('https://media.dharitri.org/nfts/thumbnail');
-    });
-
-    it("should throw error because test simulates that nft thumbnails urls are not defined", () => {
-      jest
-        .spyOn(ConfigService.prototype, 'get')
-        .mockImplementation(jest.fn(() => undefined));
-
-      expect(() => apiConfigService.getNftThumbnailsUrl()).toThrowError('No nft thumbnails url present');
-    });
-  });
-
   describe("getSecurityAdmins", () => {
     it("should return nft thumbnails url", () => {
       jest
@@ -1321,17 +1302,17 @@ describe('API Config', () => {
     });
   });
 
-  describe("getDurianExchangeUrlMandatory", () => {
-    it("should return Durian Exchange Url", () => {
+  describe("getMaiarExchangeUrlMandatory", () => {
+    it("should return Maiar Exchange Url", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'https://graph.dharitrix.org/graphql'));
+        .mockImplementation(jest.fn(() => 'https://graph.dharitrix.com/graphql'));
 
       const results = apiConfigService.getExchangeServiceUrlMandatory();
-      expect(results).toEqual('https://graph.dharitrix.org/graphql');
+      expect(results).toEqual('https://graph.dharitrix.com/graphql');
     });
 
-    it("should throw new error because test simulates that Durian Exchange Url is not defined", () => {
+    it("should throw new error because test simulates that Maiar Exchange Url is not defined", () => {
       jest
         .spyOn(ConfigService.prototype, 'get')
         .mockImplementation(jest.fn(() => undefined));

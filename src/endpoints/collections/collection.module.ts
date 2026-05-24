@@ -1,6 +1,6 @@
 import { forwardRef, Module } from "@nestjs/common";
 import { AssetsModule } from "src/common/assets/assets.module";
-import { PluginModule } from 'src/plugins/plugin.module';
+import { PluginModule } from "src/plugins/plugin.module";
 import { DcdtModule } from "../dcdt/dcdt.module";
 import { NftMarketplaceModule } from "../marketplace/nft.marketplace.module";
 import { TokenModule } from "../tokens/token.module";

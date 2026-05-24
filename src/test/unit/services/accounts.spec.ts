@@ -850,9 +850,9 @@ describe('Account Service', () => {
         name: 'Dharitri DNS: Contract 239',
         description: '',
         social: new AccountAssetsSocial({
-          website: "https://dharitrix.org",
-          twitter: "https://twitter.com/DharitriXApp",
-          telegram: "https://t.me/DharitriXApp",
+          website: "https://dharitrix.com",
+          twitter: "https://twitter.com/xExchangeApp",
+          telegram: "https://t.me/xExchangeApp",
           blog: "https://dharitri.org/blog/durian-exchange-moa-tokenomics",
         }),
         tags: ['dns'],
@@ -903,14 +903,14 @@ describe('Account Service', () => {
     const assets: { [key: string]: AccountAssets } = {
       drt1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdqjz074y: {
         name: "System: Staking Module",
-        description: "Smart contract containing all staked rEWA on the network",
+        description: "Smart contract containing all staked REWA on the network",
         tags: [
           "system",
           "staking",
           "module",
         ],
-        iconPng: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.png",
-        iconSvg: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.svg",
+        iconPng: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitri.png",
+        iconSvg: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitri.svg",
         icon: '',
         proof: '',
         social: undefined,
@@ -920,14 +920,14 @@ describe('Account Service', () => {
     const ownerAssets: { [key: string]: AccountAssets } = {
       drt1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdqjz074y: {
         name: "System: Staking Module",
-        description: "Smart contract containing all staked rEWA on the network",
+        description: "Smart contract containing all staked REWA on the network",
         tags: [
           "system",
           "staking",
           "module",
         ],
-        iconPng: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.png",
-        iconSvg: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.svg",
+        iconPng: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitri.png",
+        iconSvg: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitri.svg",
         icon: '',
         proof: '',
         social: undefined,
@@ -944,14 +944,14 @@ describe('Account Service', () => {
         ownerAddress: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf',
         assets: {
           name: "System: Staking Module",
-          description: "Smart contract containing all staked rEWA on the network",
+          description: "Smart contract containing all staked REWA on the network",
           tags: [
             "system",
             "staking",
             "module",
           ],
-          iconPng: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.png",
-          iconSvg: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.svg",
+          iconPng: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitri.png",
+          iconSvg: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/main/accounts/icons/dharitri.svg",
           icon: '',
           proof: '',
           social: undefined,

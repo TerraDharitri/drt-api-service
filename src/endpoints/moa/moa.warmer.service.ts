@@ -16,7 +16,7 @@ export class MoaWarmerService {
     private readonly cachingService: CacheService,
     @Inject('PUBSUB_SERVICE') private clientProxy: ClientProxy,
     private readonly moaEconomicsService: MoaEconomicsService,
-    private readonly moaPairsService: MoaPairService,
+    private readonly drtPairsService: MoaPairService,
     private readonly moaTokensService: MoaTokenService,
     private readonly moaSettingsService: MoaSettingsService,
     private readonly moaFarmsService: MoaFarmService,
@@ -25,7 +25,7 @@ export class MoaWarmerService {
   @Cron(CronExpression.EVERY_MINUTE)
   async handleMoaInvalidations() {
     await Locker.lock('Refreshing moa pairs', async () => {
-      await this.moaPairsService.refreshMoaPairs();
+      await this.drtPairsService.refreshMoaPairs();
     }, true);
 
     await Locker.lock('Refreshing moa economics', async () => {

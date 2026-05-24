@@ -23,7 +23,7 @@ export class MoaController {
   constructor(
     private readonly moaEconomicsService: MoaEconomicsService,
     private readonly moaSettingsService: MoaSettingsService,
-    private readonly moaPairsService: MoaPairService,
+    private readonly drtPairsService: MoaPairService,
     private readonly moaTokensService: MoaTokenService,
     private readonly moaFarmsService: MoaFarmService,
     private readonly moaTokenChartsService: MoaTokenChartsService
@@ -31,7 +31,7 @@ export class MoaController {
 
   @Get("/moa/settings")
   @ApiExcludeEndpoint()
-  @ApiResponse({ status: 200, description: 'The settings of the DharitriX' })
+  @ApiResponse({ status: 200, description: 'The settings of the xExchange' })
   @ApiNotFoundResponse({ description: 'MOA settings not found' })
   async getMoaSettings(): Promise<MoaSettings> {
     const settings = await this.moaSettingsService.getSettings();
@@ -42,14 +42,14 @@ export class MoaController {
   }
 
   @Get("/moa/economics")
-  @ApiOperation({ summary: 'DharitriX economics', description: 'Returns economics details of DharitriX' })
+  @ApiOperation({ summary: 'xExchange economics', description: 'Returns economics details of xExchange' })
   @ApiOkResponse({ type: MoaEconomics })
   async getMoaEconomics(): Promise<MoaEconomics> {
     return await this.moaEconomicsService.getMoaEconomics();
   }
 
   @Get("/moa/pairs")
-  @ApiOperation({ summary: 'DharitriX pairs', description: 'Returns active liquidity pools available on DharitriX' })
+  @ApiOperation({ summary: 'xExchange pairs', description: 'Returns active liquidity pools available on xExchange' })
   @ApiOkResponse({ type: [MoaPair] })
   @ApiQuery({ name: 'from', description: 'Number of items to skip for the result set', required: false })
   @ApiQuery({ name: 'size', description: 'Number of items to retrieve', required: false })
@@ -62,11 +62,11 @@ export class MoaController {
     @Query('includeFarms', new DefaultValuePipe(false), ParseBoolPipe) includeFarms?: boolean,
   ): Promise<MoaPair[]> {
     const filter = new MoaPairsFilter({ exchange, includeFarms });
-    return await this.moaPairsService.getMoaPairs(from, size, filter);
+    return await this.drtPairsService.getMoaPairs(from, size, filter);
   }
 
   @Get("/moa-pairs")
-  @ApiOperation({ summary: 'DharitriX pairs', description: 'Returns active liquidity pools available on DharitriX', deprecated: true })
+  @ApiOperation({ summary: 'xExchange pairs', description: 'Returns active liquidity pools available on xExchange', deprecated: true })
   @ApiOkResponse({ type: [MoaPair] })
   @ApiQuery({ name: 'from', description: 'Number of items to skip for the result set', required: false })
   @ApiQuery({ name: 'size', description: 'Number of items to retrieve', required: false })
@@ -77,11 +77,11 @@ export class MoaController {
     @Query('exchange', new ParseEnumPipe(MoaPairExchange)) exchange?: MoaPairExchange,
   ): Promise<MoaPair[]> {
     const filter = new MoaPairsFilter({ exchange });
-    return await this.moaPairsService.getMoaPairs(from, size, filter);
+    return await this.drtPairsService.getMoaPairs(from, size, filter);
   }
 
   @Get("/moa/pairs/count")
-  @ApiOperation({ summary: 'Durian Exchange pairs count', description: 'Returns active liquidity pools count available on Durian Exchange' })
+  @ApiOperation({ summary: 'Maiar Exchange pairs count', description: 'Returns active liquidity pools count available on Maiar Exchange' })
   @ApiQuery({ name: 'exchange', description: 'Filter by exchange', required: false, enum: MoaPairExchange })
   @ApiQuery({ name: 'includeFarms', description: 'Include farms information in response', required: false, type: Boolean })
   async getMoaPairsCount(
@@ -89,11 +89,11 @@ export class MoaController {
     @Query('includeFarms', new DefaultValuePipe(false), ParseBoolPipe) includeFarms?: boolean,
   ): Promise<number> {
     const filter = new MoaPairsFilter({ exchange, includeFarms });
-    return await this.moaPairsService.getMoaPairsCount(filter);
+    return await this.drtPairsService.getMoaPairsCount(filter);
   }
 
   @Get("/moa/tokens")
-  @ApiOperation({ summary: 'DharitriX tokens details', description: 'Returns a list of tokens listed on DharitriX' })
+  @ApiOperation({ summary: 'xExchange tokens details', description: 'Returns a list of tokens listed on xExchange' })
   @ApiOkResponse({ type: [MoaToken] })
   @ApiQuery({ name: 'from', description: 'Number of items to skip for the result set', required: false })
   @ApiQuery({ name: 'size', description: 'Number of items to retrieve', required: false })
@@ -105,14 +105,14 @@ export class MoaController {
   }
 
   @Get("/moa/tokens/count")
-  @ApiOperation({ summary: 'Durian Exchange tokens count', description: 'Returns tokens count available on Durian Exchange' })
+  @ApiOperation({ summary: 'Maiar Exchange tokens count', description: 'Returns tokens count available on Maiar Exchange' })
   async getMoaTokensCount(
   ): Promise<number> {
     return await this.moaTokensService.getMoaTokensCount();
   }
 
   @Get("/moa/tokens/:identifier")
-  @ApiOperation({ summary: 'DharitriX token details', description: 'Returns a specific token listed on DharitriX' })
+  @ApiOperation({ summary: 'xExchange token details', description: 'Returns a specific token listed on xExchange' })
   @ApiOkResponse({ type: MoaToken })
   @ApiNotFoundResponse({ description: 'Token not found' })
   async getMoaTokenIdentifier(
@@ -127,7 +127,7 @@ export class MoaController {
   }
 
   @Get("/moa/farms")
-  @ApiOperation({ summary: 'DharitriX farms details', description: 'Returns a list of farms listed on DharitriX' })
+  @ApiOperation({ summary: 'xExchange farms details', description: 'Returns a list of farms listed on xExchange' })
   @ApiOkResponse({ type: [MoaFarm] })
   @ApiQuery({ name: 'from', description: 'Number of items to skip for the result set', required: false })
   @ApiQuery({ name: 'size', description: 'Number of items to retrieve', required: false })
@@ -139,14 +139,14 @@ export class MoaController {
   }
 
   @Get("/moa/farms/count")
-  @ApiOperation({ summary: 'Durian Exchange farms count', description: 'Returns farms count available on Durian Exchange' })
+  @ApiOperation({ summary: 'Maiar Exchange farms count', description: 'Returns farms count available on Maiar Exchange' })
   async getMoaFarmsCount(
   ): Promise<number> {
     return await this.moaFarmsService.getMoaFarmsCount();
   }
 
   @Get("/moa/pairs/:baseId/:quoteId")
-  @ApiOperation({ summary: 'DharitriX pairs details', description: 'Returns liquidity pool details by providing a combination of two tokens' })
+  @ApiOperation({ summary: 'xExchange pairs details', description: 'Returns liquidity pool details by providing a combination of two tokens' })
   @ApiOkResponse({ type: MoaPair })
   @ApiNotFoundResponse({ description: 'Pair not found' })
   @ApiQuery({ name: 'includeFarms', description: 'Include farms information in response', required: false, type: Boolean })
@@ -155,7 +155,7 @@ export class MoaController {
     @Param('quoteId') quoteId: string,
     @Query('includeFarms', new DefaultValuePipe(false), ParseBoolPipe) includeFarms?: boolean,
   ): Promise<MoaPair> {
-    const pair = await this.moaPairsService.getMoaPair(baseId, quoteId, includeFarms);
+    const pair = await this.drtPairsService.getMoaPair(baseId, quoteId, includeFarms);
     if (!pair) {
       throw new NotFoundException('Pair not found');
     }
@@ -164,7 +164,7 @@ export class MoaController {
   }
 
   @Get('moa/tokens/prices/hourly/:identifier')
-  @ApiOperation({ summary: 'DharitriX token prices hourly', description: 'Returns token prices hourly' })
+  @ApiOperation({ summary: 'xExchange token prices hourly', description: 'Returns token prices hourly' })
   @ApiOkResponse({ type: [MoaTokenChart] })
   @ApiNotFoundResponse({ description: 'Price not available for given token identifier' })
   async getTokenPricesHourResolution(
@@ -178,13 +178,15 @@ export class MoaController {
   }
 
   @Get('moa/tokens/prices/daily/:identifier')
-  @ApiOperation({ summary: 'DharitriX token prices daily', description: 'Returns token prices daily' })
+  @ApiOperation({
+    summary: 'xExchange token prices daily',
+    description: 'Returns token prices daily, ordered by timestamp in ascending order. The entries represent the latest complete daily values for the given token series.',
+  })
   @ApiOkResponse({ type: [MoaTokenChart] })
   @ApiNotFoundResponse({ description: 'Price not available for given token identifier' })
   async getTokenPricesDayResolution(
-    @Param('identifier', ParseTokenPipe) identifier: string,
-    @Query('after') after: string): Promise<MoaTokenChart[] | undefined> {
-    const charts = await this.moaTokenChartsService.getTokenPricesDayResolution(identifier, after);
+    @Param('identifier', ParseTokenPipe) identifier: string): Promise<MoaTokenChart[] | undefined> {
+    const charts = await this.moaTokenChartsService.getTokenPricesDayResolution(identifier);
     if (!charts) {
       throw new NotFoundException('Price not available for given token identifier');
     }

@@ -34,7 +34,6 @@ urls:
   providers: 'https://internal-delegation-api.dharitri.org/providers'
   delegation: 'https://delegation-api.dharitri.org'
   media: 'https://media.dharitri.org'
-  nftThumbnails: 'https://media.dharitri.org/nfts/thumbnail'
   durianId: 'https://id-api.dharitri.org'
 database:
   enabled: false
@@ -76,4 +75,4 @@ test:
   mockPath: './src/test/mocks/'
 transaction-action:
   moa:
-    microServiceUrl: 'https://graph.dharitrix.org/graphql'
+    microServiceUrl: 'https://graph.dharitrix.com/graphql'

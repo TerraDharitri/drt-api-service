@@ -93,9 +93,9 @@ describe('ApplicationService', () => {
           name: 'Dharitri DNS: Contract 239',
           description: '',
           social: new AccountAssetsSocial({
-            website: 'https://dharitrix.org',
-            twitter: 'https://twitter.com/DharitriXApp',
-            telegram: 'https://t.me/DharitriXApp',
+            website: 'https://dharitrix.com',
+            twitter: 'https://twitter.com/xExchangeApp',
+            telegram: 'https://t.me/xExchangeApp',
             blog: 'https://dharitri.org/blog/durian-exchange-moa-tokenomics',
           }),
           tags: ['dns'],

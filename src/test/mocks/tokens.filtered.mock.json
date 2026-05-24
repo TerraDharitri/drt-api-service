@@ -7,8 +7,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "wREWA is an DCDT token that has the same value as REWA, the native coin of the  blockchain.",
+      "website": "https://dharitrix.com",
+      "description": "wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.svg",
@@ -33,8 +33,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "MOA is the utility token of the DharitriX.",
+      "website": "https://dharitrix.com",
+      "description": "MOA is the utility token of the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/MOA-455c57/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/MOA-455c57/logo.svg",
@@ -59,8 +59,8 @@
     "decimals": 6,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "USDC stablecoin originating on Ethereum, bridged as an DCDT token on . 1 USDC = 1 WrappedUSDC",
+      "website": "https://dharitrix.com",
+      "description": "USDC stablecoin originating on Ethereum, bridged as an DCDT token on DharitrI. 1 USDC = 1 WrappedUSDC",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/USDC-c76f1f/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/USDC-c76f1f/logo.svg",
@@ -85,8 +85,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/MOA pool on the DharitriX.",
+      "website": "https://dharitrix.com",
+      "description": "Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/MOA pool on the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/REWAMOA-0be9e5/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/REWAMOA-0be9e5/logo.svg"
@@ -205,7 +205,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://aerovek.com",
-      "description": "Aerovek is a social economic platform that aims to elevate the aviation industry using web3 technologies built on the  Blockchain",
+      "description": "Aerovek is a social economic platform that aims to elevate the aviation industry using web3 technologies built on the DharitrI Blockchain",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/AERO-458bbf/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/AERO-458bbf/logo.svg",
@@ -425,8 +425,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/USDC pool on the DharitriX.",
+      "website": "https://dharitrix.com",
+      "description": "Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/USDC pool on the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/REWAUSDC-594e5e/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/REWAUSDC-594e5e/logo.svg"
@@ -450,8 +450,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/RIDE pool on the DharitriX.",
+      "website": "https://dharitrix.com",
+      "description": "Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/RIDE pool on the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/REWARIDE-7bd51a/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/REWARIDE-7bd51a/logo.svg"
@@ -658,7 +658,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://ashswap.io",
-      "description": "AshSwap is the first stable-swap DEX built on the  blockchain that allows users to trade stable assets with high volume and small slippage.",
+      "description": "AshSwap is the first stable-swap DEX built on the DharitrI blockchain that allows users to trade stable assets with high volume and small slippage.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/ASH-a642d1/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/ASH-a642d1/logo.svg",
@@ -765,7 +765,7 @@
     "isPaused": false,
     "assets": {
       "website": "https://jexchange.io/",
-      "description": "A P2P decentralized exchange built on ",
+      "description": "A P2P decentralized exchange built on DharitrI",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/JEX-9040ca/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/JEX-9040ca/logo.svg",
@@ -826,14 +826,14 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://www.numbathodlers.com/",
+      "website": "https://www.dharitri.org/",
       "description": "HODL, for the right mindset.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/HODL-d7f4b5/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/HODL-d7f4b5/logo.svg",
       "social": {
-        "email": "contact@numbathodlers.com",
-        "twitter": "https://twitter.com/numbathodlers"
+        "email": "dharitri.org",
+        "twitter": "https://twitter.com/dharitri"
       }
     },
     "transactions": 43448,
@@ -888,8 +888,8 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://dharitrix.org",
-      "description": "This token tracks your LKMOA stake in the MOA farm on the DharitriX.",
+      "website": "https://dharitrix.com",
+      "description": "This token tracks your LKMOA stake in the MOA farm on the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/LKFARM-9d1ea8/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/LKFARM-9d1ea8/logo.svg"

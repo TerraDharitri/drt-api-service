@@ -30,7 +30,7 @@ describe('UsernameService', () => {
         {
           provide: ApiConfigService,
           useValue: {
-            getDurianIdUrl: jest.fn(),
+            getMaiarIdUrl: jest.fn(),
           },
         },
         {
@@ -82,7 +82,7 @@ describe('UsernameService', () => {
 
       const result = await service.getUsernameForAddressRaw(address);
 
-      expect(apiServiceSpy).toHaveBeenCalledWith(`${service['apiConfigService'].getDurianIdUrl()}/users/api/v1/users/${address}`, undefined, expect.any(Function));
+      expect(apiServiceSpy).toHaveBeenCalledWith(`${service['apiConfigService'].getMaiarIdUrl()}/users/api/v1/users/${address}`, undefined, expect.any(Function));
       expect(loggerErrorSpy).toHaveBeenCalledTimes(2);
       expect(result).toBeNull();
     });

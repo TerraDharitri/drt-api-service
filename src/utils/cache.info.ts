@@ -162,9 +162,9 @@ export class CacheInfo {
     };
   }
 
-  static TokenDailyChart(tokenIdentifier: string, after: string): CacheInfo {
+  static TokenDailyChart(tokenIdentifier: string): CacheInfo {
     return {
-      key: `tokenDailyChart:${tokenIdentifier}:${after}`,
+      key: `tokenDailyChart:${tokenIdentifier}`,
       ttl: Constants.oneDay(),
     };
   }
@@ -334,12 +334,12 @@ export class CacheInfo {
   };
 
   static MoaPairs: CacheInfo = {
-    key: "moaPairs",
+    key: "drtPairs",
     ttl: Constants.oneMinute() * 10,
   };
 
   static MoaPairsWithFarms: CacheInfo = {
-    key: 'moaPairsWithFarms',
+    key: 'drtPairsWithFarms',
     ttl: Constants.oneMinute() * 10,
   };
 
